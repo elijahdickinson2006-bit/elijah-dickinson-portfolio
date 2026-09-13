@@ -67,6 +67,10 @@
 
   copyUpdates.forEach(([from,to])=>{page=page.split(from).join(to)});
   page=page.replace(
+    '<p>For internships, engineering opportunities, or questions about one of the projects, please email me directly, connect with me on LinkedIn, call or text me, or review the source and project files on GitHub.</p>',
+    '<p>For internships, engineering opportunities, or questions about one of the projects, please email me directly, connect with me on LinkedIn, call or text me, or review the source and project files on GitHub.</p><p style="margin-top:12px"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/elijah-dickinson-b51419328/" target="_blank" rel="noopener">linkedin.com/in/elijah-dickinson-b51419328</a><br><strong>Phone:</strong> <a href="tel:+14058311013">(405) 831-1013</a></p>'
+  );
+  page=page.replace(
     '<div class="actions"><a class="btn primary" href="mailto:elijah.j.d.business@gmail.com">Email Elijah</a><a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>',
     '<div class="actions"><a class="btn primary" href="mailto:elijah.j.d.business@gmail.com">Email Elijah</a><a class="btn" href="https://www.linkedin.com/in/elijah-dickinson-b51419328/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="tel:+14058311013">(405) 831-1013</a><a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>'
   );
