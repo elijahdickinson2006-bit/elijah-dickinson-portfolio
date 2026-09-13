@@ -74,6 +74,10 @@
     '<div class="actions"><a class="btn primary" href="mailto:elijah.j.d.business@gmail.com">Email Elijah</a><a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>',
     '<div class="actions"><a class="btn primary" href="mailto:elijah.j.d.business@gmail.com">Email Elijah</a><a class="btn" href="https://www.linkedin.com/in/elijah-dickinson-b51419328/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="tel:+14058311013">(405) 831-1013</a><a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>'
   );
+  page=page.replace(
+    "const wind=[",
+    "const wind=['wind_test_section','wind_system_layout','wind_honeycomb',"
+  );
   page=page.replace('<meta name="theme-color" content="#090b0e">','<meta name="theme-color" content="#ffffff">');
   page=page.replace('</head>',`<base href="${root}"><style id="blue-white-theme">${theme}</style></head>`);
   document.open();document.write(page);document.close();
