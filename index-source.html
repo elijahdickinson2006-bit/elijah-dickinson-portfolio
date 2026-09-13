@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Elijah Dickinson engineering portfolio — aerospace and mechanical engineering projects, fabrication, instrumentation, robotics, and technical documentation.">
+<meta name="theme-color" content="#090b0e">
+<title>Elijah Dickinson | Aerospace & Mechanical Engineering</title>
+<style>
+:root{
+  --bg:#090b0e;--bg2:#0d1014;--panel:#11151a;--panel2:#151a20;--line:#252c34;
+  --text:#f4f6f8;--muted:#a7b0ba;--soft:#d6dbe0;--accent:#f58220;--accent2:#ff9a45;
+  --max:1180px;--radius:20px;--shadow:0 24px 80px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 78% 4%,rgba(245,130,32,.12),transparent 28%),linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:auto,44px 44px,44px 44px;mask-image:linear-gradient(to bottom,#000 0%,transparent 58%);pointer-events:none}
+a{color:inherit}.wrap{width:min(calc(100% - 34px),var(--max));margin:auto}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.eyebrow{display:flex;align-items:center;gap:9px;color:#ffc391;text-transform:uppercase;letter-spacing:.13em;font-size:.72rem;font-weight:850}.eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+nav{position:sticky;top:0;z-index:30;background:rgba(9,11,14,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.075)}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;letter-spacing:-.04em;text-decoration:none;font-size:1.05rem}.brand b{color:var(--accent)}.links{display:flex;align-items:center;gap:20px}.links a{text-decoration:none;color:var(--muted);font-size:.86rem;font-weight:720;transition:.2s}.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 15px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:.86rem;font-weight:820;background:rgba(255,255,255,.018);transition:transform .2s,border-color .2s,background .2s}.btn:hover{transform:translateY(-1px);border-color:#48525d;background:rgba(255,255,255,.035)}.btn.primary{background:var(--accent);border-color:var(--accent);color:#101010}.btn.primary:hover{background:var(--accent2)}
+.hero{padding:82px 0 68px}.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:54px;align-items:center}.hero h1{font-size:clamp(3.5rem,7.8vw,6.6rem);line-height:.88;letter-spacing:-.068em;margin:18px 0 22px;max-width:760px}.hero h1 span{display:block;color:#cbd1d7}.lead{font-size:clamp(1rem,2vw,1.16rem);color:var(--muted);max-width:690px;margin:0}.hero .lead strong{color:var(--soft);font-weight:730}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:27px}.hero-meta{display:flex;flex-wrap:wrap;gap:9px 18px;margin-top:31px;color:#8f99a4;font-size:.78rem}.hero-meta span{display:flex;align-items:center;gap:8px}.hero-meta i{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
+.hero-visual{position:relative}.hero-frame{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:26px;aspect-ratio:4/5;background:var(--panel);box-shadow:var(--shadow)}.hero-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,7,9,.82) 0%,transparent 44%);pointer-events:none}.hero-frame img{width:100%;height:100%;object-fit:cover;display:block}.hero-card{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;padding:17px;border-radius:16px;border:1px solid rgba(255,255,255,.13);background:rgba(12,15,18,.76);backdrop-filter:blur(15px)}.hero-card-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.hero-card strong{font-size:1rem}.hero-card small{color:#ffbd84;font-weight:780}.hero-card p{margin:6px 0 0;color:#b6bec6;font-size:.82rem}.status-dot{width:7px;height:7px;display:inline-block;border-radius:50%;background:#68d391;box-shadow:0 0 0 5px rgba(104,211,145,.08);margin-right:7px}
+section{padding:72px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:end;margin-bottom:28px}.section-head h2{font-size:clamp(2.25rem,5vw,4.2rem);line-height:.96;letter-spacing:-.052em;margin:12px 0 0}.section-head p{margin:0;color:var(--muted);font-size:1.01rem;max-width:680px}.project-number{color:#707b86;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}
+.feature-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:25px 0 14px}.metric{padding:17px 16px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(180deg,var(--panel2),var(--panel))}.metric strong{display:block;font-size:1.24rem;letter-spacing:-.03em}.metric span{display:block;color:#909aa4;font-size:.76rem;margin-top:2px}.chips{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 25px}.chip{border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:#c6cdd4;background:rgba(255,255,255,.018);font-size:.75rem;font-weight:660}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:14px}.story{position:relative;min-height:190px;padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}.story:before{content:attr(data-n);position:absolute;right:14px;top:8px;color:#ffffff09;font-size:4.5rem;font-weight:950;line-height:1}.story h3{font-size:1rem;margin:0 0 8px}.story p{margin:0;color:var(--muted);font-size:.87rem}.story .label{color:#ffbd84;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;font-weight:850;margin-bottom:8px}
+.project-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.gallery-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:38px 0 13px}.gallery-head h3{margin:0;font-size:1.12rem}.gallery-head p{margin:0;color:#7f8994;font-size:.76rem}.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.gallery button{padding:0;border:1px solid var(--line);background:var(--panel);border-radius:12px;overflow:hidden;aspect-ratio:1;cursor:zoom-in;position:relative}.gallery button:after{content:"↗";position:absolute;right:8px;bottom:7px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(8,10,12,.72);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:.72rem;opacity:0;transform:translateY(4px);transition:.2s}.gallery button:hover:after{opacity:1;transform:none}.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s,filter .35s}.gallery button:hover img{transform:scale(1.035);filter:brightness(1.06)}
+.robot-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:14px}.robot-copy{display:flex;flex-direction:column;gap:11px}.card{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.card h3{margin:0 0 8px;font-size:1rem}.card p{margin:0;color:var(--muted);font-size:.88rem}.videos{display:grid;grid-template-columns:1fr 1fr;gap:10px}.video{border:1px solid var(--line);background:var(--panel);border-radius:18px;overflow:hidden}.video video{width:100%;aspect-ratio:4/3;object-fit:cover;background:#000;display:block}.video-copy{padding:13px 14px}.video-copy h4{margin:0 0 3px;font-size:.92rem}.video-copy p{margin:0;color:#8f99a4;font-size:.76rem}
+.docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.doc{position:relative;display:block;text-decoration:none;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,var(--panel2),var(--panel));min-height:154px;transition:.22s}.doc:hover{transform:translateY(-2px);border-color:#47515c}.doc .doc-type{color:#ffbd84;font-size:.68rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.doc h3{margin:17px 0 5px;font-size:1rem}.doc p{margin:0;color:var(--muted);font-size:.82rem}.doc .arrow{position:absolute;right:18px;top:17px;color:#86919c}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.about-copy{padding:8px 0}.about-copy h2{font-size:clamp(2.2rem,4.8vw,4rem);line-height:.98;letter-spacing:-.05em;margin:13px 0 18px}.about-copy p{max-width:720px}.contact-card{padding:24px;border:1px solid rgba(245,130,32,.28);background:linear-gradient(145deg,rgba(245,130,32,.11),rgba(255,255,255,.02));border-radius:22px}.contact-card h3{margin:0 0 8px;font-size:1.3rem}.contact-card p{color:var(--muted);font-size:.88rem;margin:0}.contact-card .actions{margin-top:20px}
+footer{border-top:1px solid var(--line);padding:31px 0 42px;color:#7c8792;font-size:.77rem}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-row a{text-decoration:none;color:#aab3bc}
+.lightbox{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.93);padding:22px;align-items:center;justify-content:center}.lightbox.open{display:flex}.lightbox img{max-width:min(96vw,1400px);max-height:88vh;border-radius:11px;box-shadow:0 30px 120px rgba(0,0,0,.55)}.lb-btn{position:absolute;width:44px;height:44px;border-radius:50%;border:1px solid #4d5359;background:#171a1e;color:white;font-size:1.15rem;cursor:pointer}.lb-close{right:18px;top:18px}.lb-prev{left:18px;top:50%;transform:translateY(-50%)}.lb-next{right:18px;top:50%;transform:translateY(-50%)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:980px){.hero-grid{gap:30px}.feature-strip{grid-template-columns:repeat(3,1fr)}.feature-strip .metric:nth-last-child(-n+2){grid-column:span 1}.story-grid{grid-template-columns:1fr 1fr}.story-grid .story:last-child{grid-column:1/-1}.gallery{grid-template-columns:repeat(4,1fr)}.robot-layout{grid-template-columns:1fr}.section-head{grid-template-columns:1fr;gap:18px}.about-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.links a:not(.btn){display:none}.hero{padding:52px 0 48px}.hero-grid{grid-template-columns:1fr}.hero-visual{max-width:620px}.hero-frame{aspect-ratio:4/3}.hero h1{font-size:clamp(3.35rem,15vw,5.1rem)}section{padding:55px 0}.feature-strip{grid-template-columns:repeat(2,1fr)}.feature-strip .metric:last-child{grid-column:1/-1}.story-grid,.docs-grid,.videos{grid-template-columns:1fr}.story-grid .story:last-child{grid-column:auto}.gallery{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.wrap{width:min(calc(100% - 24px),var(--max))}.nav{min-height:62px}.links{gap:9px}.links .btn{min-height:38px;padding:0 12px}.hero{padding-top:38px}.hero-frame{aspect-ratio:1/1.05}.hero-card{left:11px;right:11px;bottom:11px}.hero-meta{display:grid;gap:8px}.feature-strip{gap:7px}.metric{padding:14px 13px}.gallery{grid-template-columns:repeat(2,1fr)}.gallery-head{align-items:start;flex-direction:column;gap:4px}.lb-prev{left:9px}.lb-next{right:9px}.footer-row{flex-direction:column;gap:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.doc,.gallery img,.gallery button:after{transition:none}}
+</style>
+</head>
+<body id="top">
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Elijah Dickinson home">ED<b>.</b></a>
+    <div class="links">
+      <a href="#projects">Projects</a><a href="#documents">Documents</a><a href="#about">About</a>
+      <a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">Aerospace + Mechanical Engineering</div>
+      <h1>Elijah <span>Dickinson.</span></h1>
+      <p class="lead">Oklahoma State University engineering student building <strong>real hardware</strong> at the intersection of aerodynamics, mechanical design, fabrication, instrumentation, and embedded systems.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore projects ↓</a>
+        <a class="btn" href="mailto:elijah.j.d.business@gmail.com">Email me</a>
+        <a class="btn" href="https://github.com/elijahdickinson2006-bit" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <div class="hero-meta mono">
+        <span><i></i>Oklahoma State University</span>
+        <span><i></i>Aerospace Engineering</span>
+        <span><i></i>Mechanical Engineering</span>
+        <span><i></i>Mathematics minor</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-frame">
+        <img src="21_IMG_9737.webp" alt="Subsonic wind tunnel components during fabrication">
+        <div class="hero-card">
+          <div class="hero-card-top"><strong>Featured build · Subsonic Wind Tunnel</strong><small><span class="status-dot"></span>Independent project</small></div>
+          <p>6 × 6 in clear test section · 4:1 contraction · flow conditioning · load-cell instrumentation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="projects">
+<section id="wind">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="project-number mono">Project 01 / Aerodynamics</div><div class="eyebrow">Featured project</div><h2>Subsonic<br>Wind Tunnel</h2></div>
+      <p>An independent benchtop wind-tunnel build designed around a simple objective: create a compact system that can condition airflow, support repeatable aerodynamic testing, and produce useful force and pressure measurements without access to a full machine shop.</p>
+    </div>
+
+    <div class="feature-strip reveal">
+      <div class="metric"><strong>12 × 12 in</strong><span>Inlet cross-section</span></div>
+      <div class="metric"><strong>6 × 6 in</strong><span>Clear test section</span></div>
+      <div class="metric"><strong>4:1</strong><span>Contraction ratio</span></div>
+      <div class="metric"><strong>18 in</strong><span>Test-section length</span></div>
+      <div class="metric"><strong>$477 / $500</strong><span>Spend / target budget</span></div>
+    </div>
+
+    <div class="chips reveal">
+      <span class="chip">Aerodynamics</span><span class="chip">Flow Conditioning</span><span class="chip">Fabrication</span><span class="chip">Acrylic</span><span class="chip">Arduino Uno</span><span class="chip">HX711</span><span class="chip">5 kg Load Cell</span><span class="chip">U-Tube Manometer</span>
+    </div>
+
+    <div class="story-grid reveal">
+      <article class="story" data-n="01"><div class="label">Architecture</div><h3>Designed the complete flow path</h3><p>Developed a 12 × 12 in inlet, honeycomb and dual-screen conditioning section, 4:1 contraction, clear acrylic test chamber, diffuser, and inline-fan arrangement around a compact benchtop footprint.</p></article>
+      <article class="story" data-n="02"><div class="label">Iteration</div><h3>Worked through fabrication error</h3><p>Measured fit-up problems, corrected out-of-square transition geometry, revised fastening strategies, and developed sealing methods around real panel tolerances instead of treating fabrication as ideal.</p></article>
+      <article class="story" data-n="03"><div class="label">Validation</div><h3>Leak-tested assembled sections</h3><p>Sealed and tested the inlet and contraction individually and after joining them, while revising the fan architecture from suction to push when tooling constraints made the original outlet configuration impractical.</p></article>
+    </div>
+
+    <div class="project-actions reveal">
+      <a class="btn primary" href="Wind_Tunnel_Engineering_Log.docx">Engineering log ↓</a>
+      <a class="btn" href="Wind_Tunnel_BOM.xlsx">BOM & cost sheet ↓</a>
+    </div>
+
+    <div class="gallery-head reveal"><div><div class="project-number mono">Build record</div><h3>Fabrication gallery</h3></div><p>Click any image · arrow keys navigate</p></div>
+    <div class="gallery reveal" id="windGallery"></div>
+  </div>
+</section>
+
+<section id="robot">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="project-number mono">Project 02 / Mechatronics</div><div class="eyebrow">Team design project</div><h2>Arduino<br>Tank-Drive Robot</h2></div>
+      <p>A mechanical-design team project combining CAD, 3D-printed hardware, drivetrain components, electronics, and autonomous C++ control into a functioning competition robot.</p>
+    </div>
+
+    <div class="chips reveal">
+      <span class="chip">SolidWorks</span><span class="chip">3D Printing</span><span class="chip">Arduino Uno</span><span class="chip">C++</span><span class="chip">Drivetrain</span><span class="chip">Electronics</span><span class="chip">System Integration</span><span class="chip">Team Coordination</span>
+    </div>
+
+    <div class="robot-layout reveal">
+      <div class="robot-copy">
+        <article class="card"><h3>Mechanical + project contribution</h3><p>Led planning and task coordination, designed mechanical components in SolidWorks, prepared and revised 3D-printed parts, programmed Arduino control logic in C++, and supported mechanical-electrical integration during testing.</p></article>
+        <article class="card"><h3>Integration under test</h3><p>Coordinated drivetrain hardware, actuators, sensors, relay modules, wiring, structural components, and autonomous timing logic into a working robot through iterative assembly and troubleshooting.</p></article>
+        <div class="gallery" id="robotGallery"></div>
+      </div>
+      <div class="videos">
+        <article class="video"><video controls playsinline preload="metadata" poster="robot_autonomous_poster.jpg"><source src="robot_autonomous.mp4" type="video/mp4"></video><div class="video-copy"><h4>Autonomous test run</h4><p>Motion and mechanism behavior during system testing.</p></div></article>
+        <article class="video"><video controls playsinline preload="metadata" poster="robot_demo_poster.jpg"><source src="robot_demo.mp4" type="video/mp4"></video><div class="video-copy"><h4>Arena demonstration</h4><p>Robot operating in the course demonstration environment.</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="documents">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="project-number mono">Technical record</div><div class="eyebrow">Supporting material</div><h2>Go beyond<br>the summary.</h2></div>
+      <p>The site is the overview. These files show the engineering underneath it: the current resume, session-by-session wind-tunnel notes, and the costed bill of materials used to manage the build.</p>
+    </div>
+    <div class="docs-grid reveal">
+      <a class="doc" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener"><span class="doc-type">PDF</span><span class="arrow">↗</span><h3>Engineering Resume</h3><p>Education, experience, technical skills, and project highlights.</p></a>
+      <a class="doc" href="Wind_Tunnel_Engineering_Log.docx"><span class="doc-type">DOCX</span><span class="arrow">↓</span><h3>Engineering Log</h3><p>Design decisions, fabrication sessions, problems encountered, and revisions.</p></a>
+      <a class="doc" href="Wind_Tunnel_BOM.xlsx"><span class="doc-type">XLSX</span><span class="arrow">↓</span><h3>Wind Tunnel BOM</h3><p>Parts, quantities, purchasing, and project cost tracking.</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <div class="eyebrow">About</div>
+      <h2>Engineering that survives contact with reality.</h2>
+      <p class="lead">I am pursuing B.S. degrees in Aerospace Engineering and Mechanical Engineering with a minor in Mathematics at Oklahoma State University. I am most interested in work where analysis turns into hardware: designing, building, testing, measuring, troubleshooting, and improving systems until they actually work.</p>
+      <div class="chips"><span class="chip">SolidWorks</span><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Arduino</span><span class="chip">LabVIEW</span><span class="chip">3D Printing</span><span class="chip">Instrumentation</span></div>
+    </div>
+    <aside class="contact-card reveal">
+      <div class="project-number mono">Contact</div>
+      <h3>Want the technical details?</h3>
+      <p>For internships, engineering opportunities, or questions about one of the projects, email me directly or review the source and project files on GitHub.</p>
+      <div class="actions"><a class="btn primary" href="mailto:elijah.j.d.business@gmail.com">Email Elijah</a><a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer-row"><span>© 2026 Elijah Dickinson · Aerospace & Mechanical Engineering · Oklahoma State University</span><span><a href="#top">Back to top ↑</a></span></div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project image viewer">
+  <button class="lb-btn lb-close" aria-label="Close image viewer">×</button>
+  <button class="lb-btn lb-prev" aria-label="Previous image">‹</button>
+  <img id="lightboxImg" alt="Expanded project photo">
+  <button class="lb-btn lb-next" aria-label="Next image">›</button>
+</div>
+
+<script>
+const wind=['01_IMG_9617','03_IMG_9625','04_IMG_9627','05_IMG_9628','06_IMG_9629','07_IMG_9630','08_IMG_9631','09_IMG_9660','10_IMG_9661','11_IMG_9688','12_IMG_9689','13_IMG_9699','14_IMG_9700','15_IMG_9701','16_IMG_9702','17_IMG_9703','18_IMG_9704','19_IMG_9705','20_IMG_9732','21_IMG_9737'];
+const robot=['01_IMG_0728','02_IMG_9356','03_IMG_9357','04_IMG_9474'];
+let activeSet=[],activeIndex=0;
+const box=document.getElementById('lightbox'),pic=document.getElementById('lightboxImg');
+function gallery(id,arr,label){const el=document.getElementById(id);arr.forEach((n,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Open ${label} photo ${i+1}`);b.innerHTML=`<img loading="lazy" src="${n}.webp" alt="${label} photo ${i+1}">`;b.onclick=()=>openLightbox(arr,i);el.appendChild(b)})}
+function openLightbox(arr,i){activeSet=arr;activeIndex=i;pic.src=`${activeSet[activeIndex]}.webp`;box.classList.add('open');document.body.style.overflow='hidden'}
+function closeLightbox(){box.classList.remove('open');pic.src='';document.body.style.overflow=''}
+function step(dir){if(!activeSet.length)return;activeIndex=(activeIndex+dir+activeSet.length)%activeSet.length;pic.src=`${activeSet[activeIndex]}.webp`}
+box.querySelector('.lb-close').onclick=closeLightbox;box.querySelector('.lb-prev').onclick=()=>step(-1);box.querySelector('.lb-next').onclick=()=>step(1);box.onclick=e=>{if(e.target===box)closeLightbox()};
+document.addEventListener('keydown',e=>{if(!box.classList.contains('open'))return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+gallery('windGallery',wind,'Wind tunnel build');gallery('robotGallery',robot,'Tank-drive robot');
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
