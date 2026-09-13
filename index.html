@@ -85,7 +85,7 @@
   const allWind=[
     'wind_new_01',
     'wind_new_02',
-    'wind_system_layout',
+    'wind_system_layout_v2',
     'wind_new_04',
     'wind_new_05',
     'wind_new_06',
@@ -106,17 +106,25 @@
   page=page.replace(/const wind=\[[^\]]*\];/,`const wind=${JSON.stringify(allWind)};`);
   page=page.replace(
     '<img src="21_IMG_9737.webp" alt="Subsonic wind tunnel components during fabrication">',
-    '<img src="wind_system_layout.webp" alt="Subsonic wind tunnel components staged together during fabrication">'
+    `<img src="wind_system_layout_v2.webp?v=${stamp}" alt="Subsonic wind tunnel components staged together during fabrication">`
   );
   page=page.replace(
     'let activeSet=[],activeIndex=0;',
-    "let activeSet=[],activeIndex=0;const assetSrc=n=>n.startsWith('data:')?n:`${n}.webp`;"
+    "let activeSet=[],activeIndex=0;const assetSrc=n=>n.startsWith('data:')?n:`${n}.webp`;const fixOrientation=()=>{pic.style.transform=(activeSet===wind&&activeIndex===13)?'rotate(180deg)':'none'};"
   );
   page=page.split('src="${n}.webp"').join('src="${assetSrc(n)}"');
   page=page.split('pic.src=`${activeSet[activeIndex]}.webp`').join('pic.src=assetSrc(activeSet[activeIndex])');
+  page=page.replace(
+    "function openLightbox(arr,i){activeSet=arr;activeIndex=i;pic.src=assetSrc(activeSet[activeIndex]);box.classList.add('open');document.body.style.overflow='hidden'}",
+    "function openLightbox(arr,i){activeSet=arr;activeIndex=i;pic.src=assetSrc(activeSet[activeIndex]);fixOrientation();box.classList.add('open');document.body.style.overflow='hidden'}"
+  );
+  page=page.replace(
+    "function step(dir){if(!activeSet.length)return;activeIndex=(activeIndex+dir+activeSet.length)%activeSet.length;pic.src=assetSrc(activeSet[activeIndex])}",
+    "function step(dir){if(!activeSet.length)return;activeIndex=(activeIndex+dir+activeSet.length)%activeSet.length;pic.src=assetSrc(activeSet[activeIndex]);fixOrientation()}"
+  );
 
   page=page.replace('<meta name="theme-color" content="#090b0e">','<meta name="theme-color" content="#ffffff">');
-  page=page.replace('</head>',`<base href="${root}"><style id="blue-white-theme">${theme}</style></head>`);
+  page=page.replace('</head>',`<base href="${root}"><style id="blue-white-theme">${theme}\n#windGallery button:nth-child(14) img{transform:rotate(180deg)}#windGallery button:nth-child(14):hover img{transform:rotate(180deg) scale(1.035)}</style></head>`);
   document.open();document.write(page);document.close();
 })().catch(err=>{document.body.innerHTML='<main style="font-family:system-ui;padding:40px"><h1>Portfolio loading error</h1><p>Please refresh the page.</p></main>';console.error(err)});
 </script>
