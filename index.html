@@ -11,7 +11,7 @@
 (async()=>{
   const root='https://raw.githubusercontent.com/elijahdickinson2006-bit/elijah-dickinson-portfolio/main/';
   const stamp=Date.now();
-  const b64Nums=['08','10','11','12','13','14','15','16','17','18','19'];
+  const b64Nums=['03','08','09','10','11','12','13','14','15','16','17','18','19'];
   const responses=await Promise.all([
     fetch(root+'index-source.html?v='+stamp,{cache:'no-store'}),
     fetch(root+'theme.css?v='+stamp,{cache:'no-store'}),
@@ -85,13 +85,13 @@
   const allWind=[
     'wind_new_01',
     'wind_new_02',
-    'wind_system_layout_v2',
+    embedded.wind_new_03,
     'wind_new_04',
     'wind_new_05',
     'wind_new_06',
     'wind_new_07',
     embedded.wind_new_08,
-    'wind_honeycomb',
+    embedded.wind_new_09,
     embedded.wind_new_10,
     embedded.wind_new_11,
     embedded.wind_new_12,
@@ -106,7 +106,7 @@
   page=page.replace(/const wind=\[[^\]]*\];/,`const wind=${JSON.stringify(allWind)};`);
   page=page.replace(
     '<img src="21_IMG_9737.webp" alt="Subsonic wind tunnel components during fabrication">',
-    `<img src="wind_system_layout_v2.webp?v=${stamp}" alt="Subsonic wind tunnel components staged together during fabrication">`
+    `<img src="wind_new_04.webp?v=${stamp}" alt="Subsonic wind tunnel components staged together during fabrication">`
   );
   page=page.replace(
     'let activeSet=[],activeIndex=0;',
