@@ -91,7 +91,6 @@
     'wind_new_06',
     'wind_new_07',
     embedded.wind_new_08,
-    'wind_honeycomb',
     embedded.wind_new_10,
     embedded.wind_new_11,
     embedded.wind_new_12,
@@ -110,7 +109,7 @@
   );
   page=page.replace(
     'let activeSet=[],activeIndex=0;',
-    "let activeSet=[],activeIndex=0;const assetSrc=n=>n.startsWith('data:')?n:`${n}.webp`;const fixOrientation=()=>{pic.style.transform=(activeSet===wind&&activeIndex===13)?'rotate(180deg)':'none'};"
+    "let activeSet=[],activeIndex=0;const assetSrc=n=>n.startsWith('data:')?n:`${n}.webp`;const fixOrientation=()=>{pic.style.transform=(activeSet===wind&&activeIndex===12)?'rotate(180deg)':'none'};"
   );
   page=page.split('src="${n}.webp"').join('src="${assetSrc(n)}"');
   page=page.split('pic.src=`${activeSet[activeIndex]}.webp`').join('pic.src=assetSrc(activeSet[activeIndex])');
@@ -124,7 +123,7 @@
   );
 
   page=page.replace('<meta name="theme-color" content="#090b0e">','<meta name="theme-color" content="#ffffff">');
-  page=page.replace('</head>',`<base href="${root}"><style id="blue-white-theme">${theme}\n#windGallery button:nth-child(14) img{transform:rotate(180deg)}#windGallery button:nth-child(14):hover img{transform:rotate(180deg) scale(1.035)}</style></head>`);
+  page=page.replace('</head>',`<base href="${root}"><style id="blue-white-theme">${theme}\n#windGallery button:nth-child(13) img{transform:rotate(180deg)}#windGallery button:nth-child(13):hover img{transform:rotate(180deg) scale(1.035)}</style></head>`);
   document.open();document.write(page);document.close();
 })().catch(err=>{document.body.innerHTML='<main style="font-family:system-ui;padding:40px"><h1>Portfolio loading error</h1><p>Please refresh the page.</p></main>';console.error(err)});
 </script>
