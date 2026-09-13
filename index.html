@@ -11,12 +11,19 @@
 (async()=>{
   const root='https://raw.githubusercontent.com/elijahdickinson2006-bit/elijah-dickinson-portfolio/main/';
   const stamp=Date.now();
-  const [pageRes,themeRes]=await Promise.all([
+  const b64Nums=['08','10','11','12','13','14','15','16','17','18','19'];
+  const responses=await Promise.all([
     fetch(root+'index-source.html?v='+stamp,{cache:'no-store'}),
-    fetch(root+'theme.css?v='+stamp,{cache:'no-store'})
+    fetch(root+'theme.css?v='+stamp,{cache:'no-store'}),
+    ...b64Nums.map(n=>fetch(root+`wind_new_${n}.b64?v=${stamp}`,{cache:'no-store'}))
   ]);
+  const pageRes=responses[0];
+  const themeRes=responses[1];
+  const b64Res=responses.slice(2);
   let page=await pageRes.text();
   const theme=await themeRes.text();
+  const b64Texts=await Promise.all(b64Res.map(r=>r.text()));
+  const embedded=Object.fromEntries(b64Nums.map((n,i)=>[`wind_new_${n}`,`data:image/webp;base64,${b64Texts[i].trim()}`]));
 
   const copyUpdates=[
     [
@@ -74,10 +81,40 @@
     '<div class="actions"><a class="btn primary" href="mailto:elijah.j.d.business@gmail.com">Email Elijah</a><a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>',
     '<div class="actions"><a class="btn primary" href="mailto:elijah.j.d.business@gmail.com">Email Elijah</a><a class="btn" href="https://www.linkedin.com/in/elijah-dickinson-b51419328/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="tel:+14058311013">(405) 831-1013</a><a class="btn" href="Elijah_Dickinson_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></div>'
   );
+
+  const allWind=[
+    'wind_new_01',
+    'wind_new_02',
+    'wind_system_layout',
+    'wind_new_04',
+    'wind_new_05',
+    'wind_new_06',
+    'wind_new_07',
+    embedded.wind_new_08,
+    'wind_honeycomb',
+    embedded.wind_new_10,
+    embedded.wind_new_11,
+    embedded.wind_new_12,
+    embedded.wind_new_13,
+    embedded.wind_new_14,
+    embedded.wind_new_15,
+    embedded.wind_new_16,
+    embedded.wind_new_17,
+    embedded.wind_new_18,
+    embedded.wind_new_19
+  ];
+  page=page.replace(/const wind=\[[^\]]*\];/,`const wind=${JSON.stringify(allWind)};`);
   page=page.replace(
-    "const wind=[",
-    "const wind=['wind_test_section','wind_system_layout','wind_honeycomb',"
+    '<img src="21_IMG_9737.webp" alt="Subsonic wind tunnel components during fabrication">',
+    '<img src="wind_system_layout.webp" alt="Subsonic wind tunnel components staged together during fabrication">'
   );
+  page=page.replace(
+    'let activeSet=[],activeIndex=0;',
+    "let activeSet=[],activeIndex=0;const assetSrc=n=>n.startsWith('data:')?n:`${n}.webp`;"
+  );
+  page=page.split('src="${n}.webp"').join('src="${assetSrc(n)}"');
+  page=page.split('pic.src=`${activeSet[activeIndex]}.webp`').join('pic.src=assetSrc(activeSet[activeIndex])');
+
   page=page.replace('<meta name="theme-color" content="#090b0e">','<meta name="theme-color" content="#ffffff">');
   page=page.replace('</head>',`<base href="${root}"><style id="blue-white-theme">${theme}</style></head>`);
   document.open();document.write(page);document.close();
