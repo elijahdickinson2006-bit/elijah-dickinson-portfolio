@@ -11,7 +11,7 @@
 (async()=>{
   const root='https://raw.githubusercontent.com/elijahdickinson2006-bit/elijah-dickinson-portfolio/main/';
   const stamp=Date.now();
-  const b64Nums=['03','08','09','10','11','12','13','14','15','16','17','18','19'];
+  const b64Nums=['03','08','10','11','12','13','14','15','16','17','18','19'];
   const responses=await Promise.all([
     fetch(root+'index-source.html?v='+stamp,{cache:'no-store'}),
     fetch(root+'theme.css?v='+stamp,{cache:'no-store'}),
@@ -91,7 +91,7 @@
     'wind_new_06',
     'wind_new_07',
     embedded.wind_new_08,
-    embedded.wind_new_09,
+    'wind_honeycomb',
     embedded.wind_new_10,
     embedded.wind_new_11,
     embedded.wind_new_12,
