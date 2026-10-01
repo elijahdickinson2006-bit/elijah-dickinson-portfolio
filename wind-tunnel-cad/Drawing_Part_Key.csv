@@ -1,0 +1,51 @@
+﻿Drawing ID,Part,Assembly quantity,Material
+P01,01_Inlet_Top,1,BCX plywood - nominal
+P02,01_Inlet_Bottom,1,BCX plywood - nominal
+P03,01_Inlet_Right,1,BCX plywood - nominal
+P04,01_Inlet_Left,1,BCX plywood - nominal
+P05,02_Contraction_Top,1,BCX plywood - nominal
+P06,02_Contraction_Bottom,1,BCX plywood - nominal
+P07,02_Contraction_Right,1,BCX plywood - nominal
+P08,02_Contraction_Left,1,BCX plywood - nominal
+P09,03_Test_Floor,1,Acrylic (Medium-high impact)
+P10,03_Test_Right,1,Acrylic (Medium-high impact)
+P11,03_Test_Left,1,Acrylic (Medium-high impact)
+P12,03_Removable_Lid,1,Acrylic (Medium-high impact)
+P13,04_Diffuser_Top,1,BCX plywood - nominal
+P14,04_Diffuser_Bottom,1,BCX plywood - nominal
+P15,04_Diffuser_Right,1,BCX plywood - nominal
+P16,04_Diffuser_Left,1,BCX plywood - nominal
+P17,05_Aramid_Honeycomb,1,Aramid paper - assumed
+P18,05_Aluminum_Screen,2,1060 Alloy
+P19,05_Honeycomb_Edge_Seal,1,Foam weatherstrip - assumed
+P20,06_Fan_Housing,1,Plain Carbon Steel
+P21,06_Fan_End_Collar,2,Plain Carbon Steel
+P22,06_Fan_Impeller,1,ABS
+P23,07_Lid_Gasket_Rail,2,Foam weatherstrip - assumed
+P24,07_Magnet_Support_Tab,4,BCX plywood - nominal
+P25,07_Disc_Magnet,8,Neodymium magnet - assumed
+P26,08_Base_Rail,2,Pine
+P27,08_Crossbeam,5,Pine
+P28,08_Inlet_Diffuser_Post,4,Pine
+P29,08_Test_Support_Post,4,Pine
+P30,08_Fan_Support_Post,2,Pine
+P31,08_Electronics_Shelf,1,BCX plywood - nominal
+P32,09_Load_Cell_5kg,1,1060 Alloy
+P33,09_Stainless_Model_Rod,1,AISI 304
+P34,09_Load_Cell_Mount,1,BCX plywood - nominal
+P35,09_Arduino_UNO_Board,1,PCB laminate - assumed
+P36,09_HX711_Board,1,PCB laminate - assumed
+P37,10_Corner_Brace_3_5in,16,Galvanized Steel
+P38,10_Corner_Brace_2in,8,Galvanized Steel
+P39,REF_Measured_Trapezoid_A,0,BCX plywood - nominal
+P40,11_Screen_Retaining_Frame,2,BCX plywood - nominal
+P41,11_Wood_Screw_No8_3_4in,128,Galvanized Steel
+P42,11_Manometer_U_Tube,1,Clear vinyl - assumed
+P43,11_Diffuser_Saddle,1,Pine
+P44,12_Caulk_Inlet_Corner,4,White caulk - assumed
+P45,12_Caulk_Contraction_Corner,4,White caulk - assumed
+P46,12_Caulk_Diffuser_Corner,4,White caulk - assumed
+P47,12_Caulk_Acrylic_Floor_Seam,2,White caulk - assumed
+P48,12_Caulk_Inlet_Contraction_Joint,1,White caulk - assumed
+P49,12_Caulk_Contraction_Acrylic_Joint,1,White caulk - assumed
+P50,12_Caulk_Acrylic_Diffuser_Joint,1,White caulk - assumed
